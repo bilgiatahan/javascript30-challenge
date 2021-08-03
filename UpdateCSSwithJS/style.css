@@ -1,0 +1,48 @@
+:root {
+    --bgColor: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 25px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #add8e6;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 600px;
+    background-color: var(--bgColor);
+    padding: 10px;
+}
+
+.img-container img {
+    transform: scale();
+    filter: blur(0px);
+}
+
+.title {
+    text-align: center;
+}
+
+.hl {
+    color: var(--bgColor);
+}

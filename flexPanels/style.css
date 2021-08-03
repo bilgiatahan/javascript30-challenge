@@ -1,0 +1,91 @@
+html {
+    box-sizing: border-box;
+    background-color: #ffc600;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+body {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.panels {
+    display: flex;
+    min-height: 100vh;
+}
+
+.panel {
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: flex 1s ease-in;
+}
+
+.panel.open {
+    font-size: 30px;
+}
+
+.panel>* {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    border: 1px solid red;
+    transition: transform 1s ease-in;
+}
+
+.panel p:first-child {
+    transform: translateY(-100%);
+}
+
+.panel.open>p:first-child {
+    transform: translateY(0);
+}
+
+.panel p:last-child {
+    transform: translateY(100%);
+}
+
+.panel.open>p:last-child {
+    transform: translateY(0);
+}
+
+.panel.openCard {
+    flex: 5;
+}
+
+.panel p {
+    /* font-size: 25px; */
+    font-weight: 700;
+}
+
+.panel1 {
+    background: brown;
+}
+
+.panel2 {
+    background: darkorange;
+}
+
+.panel3 {
+    background: cornflowerblue;
+}
+
+.panel4 {
+    background: darkgreen;
+}
+
+.panel5 {
+    background: coral;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" name="" id="" class="search">
+    </form>
+    <ul class="list">
+        <li></li>
+    </ul>
+    <script>
+        const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+        let cities = []
+        fetch(endpoint)
+            .then(blob => blob.json())
+            .then(data => cities = data)
+
+        function findMatches(wordToMatch, cities) {
+            return cities.filter(place => {
+                const regex = new RegExp(wordToMatch, 'gi')
+                return place.city.match(regex) || place.state.match(regex)
+            })
+        }
+
+        function displayMatches() {
+            const matchArray = findMatches(this.value, cities)
+            const html = matchArray.map(place => {
+                return `
+                    <li>
+                        <span>${place.city}</span>
+                        <span>${place.city}</span>
+                    </li>
+                `
+            })
+            list.innerHTML = html
+        }
+        const search = document.querySelector(".search")
+        const list = document.querySelector(".list")
+
+        search.addEventListener('keyup', displayMatches)
+    </script>
+</body>
+
+</html>
